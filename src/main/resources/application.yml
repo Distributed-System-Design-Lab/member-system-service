@@ -1,7 +1,10 @@
 server:
-  port: 9000 # 設置伺服器端口為 9000
+  port: 8083
 
 spring:
+  datasource:
+    username: sa
+    url: jdbc:h2:mem:testdb;DB_CLOSE_ON_EXIT=FALSE
   security:
     oauth2:
       authorizationserver:
@@ -23,3 +26,10 @@ spring:
               scopes:
                 - openid # 授權範圍為 openid
                 - articles.read # 授權範圍為 articles.read
+keycloak:
+  server:
+    contextPath: /auth
+    adminUser:
+      username: admin
+      password: admin
+    realmImportFile: baeldung-realm.json
