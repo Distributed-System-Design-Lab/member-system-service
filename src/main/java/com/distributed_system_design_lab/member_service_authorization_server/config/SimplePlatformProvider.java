@@ -1,12 +1,13 @@
 package com.distributed_system_design_lab.member_service_authorization_server.config;
 
+import java.io.File;
+
 import org.keycloak.Config.Scope;
 import org.keycloak.common.Profile;
 import org.keycloak.common.profile.PropertiesFileProfileConfigResolver;
 import org.keycloak.common.profile.PropertiesProfileConfigResolver;
 import org.keycloak.platform.PlatformProvider;
 import org.keycloak.services.ServicesLogger;
-import java.io.File;
 
 public class SimplePlatformProvider implements PlatformProvider {
 
@@ -56,4 +57,5 @@ public class SimplePlatformProvider implements PlatformProvider {
     public String name() {
         return "oauth-authorization-server";
     }
+
 }

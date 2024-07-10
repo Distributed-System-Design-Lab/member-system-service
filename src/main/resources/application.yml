@@ -5,27 +5,27 @@ spring:
   datasource:
     username: sa
     url: jdbc:h2:mem:testdb;DB_CLOSE_ON_EXIT=FALSE
-  security:
-    oauth2:
-      authorizationserver:
-        issuer: http://auth-server:9000 # 授權伺服器的發行者 URI
-        client:
-          articles-client:
-            registration:
-              client-id: articles-client # 設置客戶端 ID
-              client-secret: "{noop}secret" # 設置客戶端密鑰，{noop} 表示不使用加密
-              client-name: Articles Client # 客戶端名稱
-              client-authentication-methods:
-                - client_secret_basic # 客戶端認證方法為 basic 認證
-              authorization-grant-types:
-                - authorization_code # 授權類型為授權碼模式
-                - refresh_token # 授權類型為刷新令牌模式
-              redirect-uris:
-                - http://127.0.0.1:8080/login/oauth2/code/articles-client-oidc # 授權碼模式的重定向 URI
-                - http://127.0.0.1:8080/authorized # 授權成功後的重定向 URI
-              scopes:
-                - openid # 授權範圍為 openid
-                - articles.read # 授權範圍為 articles.read
+  # security:
+  #   oauth2:
+  #     authorizationserver:
+  #       issuer: http://auth-server:9000 # 授權伺服器的發行者 URI
+  #       client:
+  #         articles-client:
+  #           registration:
+  #             client-id: articles-client # 設置客戶端 ID
+  #             client-secret: "{noop}secret" # 設置客戶端密鑰，{noop} 表示不使用加密
+  #             client-name: Articles Client # 客戶端名稱
+  #             client-authentication-methods:
+  #               - client_secret_basic # 客戶端認證方法為 basic 認證
+  #             authorization-grant-types:
+  #               - authorization_code # 授權類型為授權碼模式
+  #               - refresh_token # 授權類型為刷新令牌模式
+  #             redirect-uris:
+  #               - http://127.0.0.1:8080/login/oauth2/code/articles-client-oidc # 授權碼模式的重定向 URI
+  #               - http://127.0.0.1:8080/authorized # 授權成功後的重定向 URI
+  #             scopes:
+  #               - openid # 授權範圍為 openid
+  #               - articles.read # 授權範圍為 articles.read
 keycloak:
   server:
     contextPath: /auth

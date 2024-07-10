@@ -5,9 +5,11 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = "keycloak.server")
 public class KeycloakServerProperties {
 
-    private String contextPath = "/auth";
-    private String realmImportFile = "baeldung-realm.json";
-    private AdminUser adminUser = new AdminUser();
+    String contextPath = "/auth";
+
+    String realmImportFile = "baeldung-realm.json";
+
+    AdminUser adminUser = new AdminUser();
 
     public String getContextPath() {
         return contextPath;
@@ -15,14 +17,6 @@ public class KeycloakServerProperties {
 
     public void setContextPath(String contextPath) {
         this.contextPath = contextPath;
-    }
-
-    public String getRealmImportFile() {
-        return realmImportFile;
-    }
-
-    public void setRealmImportFile(String realmImportFile) {
-        this.realmImportFile = realmImportFile;
     }
 
     public AdminUser getAdminUser() {
@@ -33,9 +27,19 @@ public class KeycloakServerProperties {
         this.adminUser = adminUser;
     }
 
+    public String getRealmImportFile() {
+        return realmImportFile;
+    }
+
+    public void setRealmImportFile(String realmImportFile) {
+        this.realmImportFile = realmImportFile;
+    }
+
     public static class AdminUser {
-        private String username = "admin";
-        private String password = "admin";
+
+        String username = "admin";
+
+        String password = "admin";
 
         public String getUsername() {
             return username;
