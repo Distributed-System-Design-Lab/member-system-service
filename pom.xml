@@ -16,7 +16,10 @@
 	</parent>
 	
     <dependencies>
-
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
         <!-- web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -150,7 +153,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.baeldung.auth.AuthorizationServerApp</mainClass>
+                    <mainClass>com.distributed_system_design_lab.member_service_authorization_server.MemberServiceAuthorizationServerApplication</mainClass>
                     <requiresUnpack>
                         <dependency>
                             <groupId>org.keycloak</groupId>

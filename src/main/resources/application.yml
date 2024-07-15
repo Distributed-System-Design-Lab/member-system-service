@@ -12,7 +12,7 @@ keycloak:
     adminUser:
       username: admin
       password: admin
-    realmImportFile: baeldung-realm.json
+    realmImportFile: people-system-realm.json
   theme:
     staticMaxAge: 2592000
     cacheTemplates: false
