@@ -1,6 +1,8 @@
 {
   "id": "PeopleSystem",
   "realm": "PeopleSystem",
+  "displayName": "",
+  "displayNameHtml": "",
   "notBefore": 0,
   "defaultSignatureAlgorithm": "RS256",
   "revokeRefreshToken": false,
@@ -27,13 +29,13 @@
   "oauth2DevicePollingInterval": 5,
   "enabled": true,
   "sslRequired": "external",
-  "registrationAllowed": false,
+  "registrationAllowed": true,
   "registrationEmailAsUsername": false,
-  "rememberMe": false,
-  "verifyEmail": false,
+  "rememberMe": true,
+  "verifyEmail": true,
   "loginWithEmailAllowed": true,
   "duplicateEmailsAllowed": false,
-  "resetPasswordAllowed": false,
+  "resetPasswordAllowed": true,
   "editUsernameAllowed": false,
   "bruteForceProtected": false,
   "permanentLockout": false,
@@ -355,7 +357,26 @@
       ]
     }
   },
-  "groups": [],
+  "groups": [
+    {
+      "id": "56d2a0bb-76cf-49c6-867c-2bcae53804c4",
+      "name": "hagishi",
+      "path": "/hagishi",
+      "subGroups": [],
+      "attributes": {},
+      "realmRoles": [],
+      "clientRoles": {}
+    },
+    {
+      "id": "1f54a96c-c498-48c5-8107-55ef25505818",
+      "name": "hagisun",
+      "path": "/hagisun",
+      "subGroups": [],
+      "attributes": {},
+      "realmRoles": [],
+      "clientRoles": {}
+    }
+  ],
   "defaultRole": {
     "id": "f6976a44-374d-4560-b6df-626c5e3f740e",
     "name": "default-roles-peoplesystem",
@@ -388,6 +409,59 @@
   "webAuthnPolicyCreateTimeout": 0,
   "webAuthnPolicyAvoidSameAuthenticatorRegister": false,
   "webAuthnPolicyAcceptableAaguids": [],
+  "users": [
+    {
+      "id": "a5461470-33eb-4b2d-82d4-b0484e96ad7f",
+      "createdTimestamp": 1574174706812,
+      "username": "sorane",
+      "enabled": true,
+      "totp": false,
+      "credentials": [
+        {
+          "id": "024b62f1-3af0-49fc-a15f-e843b72e00df",
+          "type": "password",
+          "createdDate": 1574174719522,
+          "value": "password"
+        }
+      ],
+      "emailVerified": false,
+      "firstName": "Sorane",
+      "lastName": "Morichiku",
+      "email": "morichikusorane@gmail.com",
+      "disableableCredentialTypes": [],
+      "requiredActions": [],
+      "realmRoles": ["offline_access", "uma_authorization"],
+      "clientRoles": {
+        "account": ["manage-account", "view-profile"]
+      },
+      "notBefore": 0,
+      "groups": ["hagisun"]
+    },
+    {
+      "id": "22a4d9fe-194c-4c6e-841a-8a55b402459f",
+      "createdTimestamp": 1580237252522,
+      "username": "chiaki",
+      "enabled": true,
+      "totp": false,
+      "credentials": [
+        {
+          "id": "024b62f1-3af0-49fc-a15f-e843b72e00df",
+          "type": "password",
+          "createdDate": 1574174719522,
+          "value": "password"
+        }
+      ],
+      "emailVerified": false,
+      "disableableCredentialTypes": [],
+      "requiredActions": [],
+      "realmRoles": ["offline_access", "uma_authorization"],
+      "clientRoles": {
+        "account": ["manage-account", "view-profile"]
+      },
+      "notBefore": 0,
+      "groups": ["hagishi"]
+    }
+  ],
   "webAuthnPolicyExtraOrigins": [],
   "webAuthnPolicyPasswordlessRpEntityName": "keycloak",
   "webAuthnPolicyPasswordlessSignatureAlgorithms": ["ES256"],
@@ -400,58 +474,6 @@
   "webAuthnPolicyPasswordlessAvoidSameAuthenticatorRegister": false,
   "webAuthnPolicyPasswordlessAcceptableAaguids": [],
   "webAuthnPolicyPasswordlessExtraOrigins": [],
-  "users": [
-    {
-      "id": "a5461470-33eb-4b2d-82d4-b0484e96ad7f",
-      "createdTimestamp": 1574174706812,
-      "username": "john@test.com",
-      "enabled": true,
-      "totp": false,
-      "emailVerified": false,
-      "credentials": [
-        {
-          "id": "024b62f1-3af0-49fc-a15f-e843b72e00df",
-          "type": "password",
-          "createdDate": 1574174719522,
-          "secretData": "{\"value\":\"tfHk9estQfa27osLCY2QelpkL6Sm6rPS+iQ33ytPSD4p10Fk7ophI7ChERAnzDjVSmvdsZAttsg2Yr+8F4Gzfw==\",\"salt\":\"goh99WgI7T1ZuGdrKzNAeQ==\"}",
-          "credentialData": "{\"hashIterations\":27500,\"algorithm\":\"pbkdf2-sha256\"}"
-        }
-      ],
-      "disableableCredentialTypes": [],
-      "requiredActions": [],
-      "realmRoles": ["offline_access", "uma_authorization"],
-      "clientRoles": {
-        "account": ["manage-account", "view-profile"]
-      },
-      "notBefore": 0,
-      "groups": []
-    },
-    {
-      "id": "22a4d9fe-194c-4c6e-841a-8a55b402459f",
-      "createdTimestamp": 1580237252522,
-      "username": "mike@other.com",
-      "enabled": true,
-      "totp": false,
-      "emailVerified": false,
-      "credentials": [
-        {
-          "id": "73c8d1ca-d548-4e1a-a82d-2c1d0d3ee017",
-          "type": "password",
-          "createdDate": 1580237291489,
-          "secretData": "{\"value\":\"fea4QiAzqmOctQGtJrKvoPRIUKLdQ5UKFIEPEQ7PYjTjxvucDZVk8yzXNfsDHvgpZ2rWiwsACgvsymdHnmru9w==\",\"salt\":\"nu5yJh98jz8cGLnLx36uvg==\"}",
-          "credentialData": "{\"hashIterations\":27500,\"algorithm\":\"pbkdf2-sha256\"}"
-        }
-      ],
-      "disableableCredentialTypes": [],
-      "requiredActions": [],
-      "realmRoles": ["offline_access", "uma_authorization"],
-      "clientRoles": {
-        "account": ["manage-account", "view-profile"]
-      },
-      "notBefore": 0,
-      "groups": []
-    }
-  ],
   "scopeMappings": [
     {
       "clientScope": "offline_access",
@@ -1282,13 +1304,13 @@
         "subComponents": {},
         "config": {
           "allowed-protocol-mapper-types": [
-            "saml-role-list-mapper",
-            "saml-user-attribute-mapper",
-            "oidc-usermodel-attribute-mapper",
-            "oidc-address-mapper",
-            "oidc-full-name-mapper",
-            "oidc-sha256-pairwise-sub-mapper",
             "saml-user-property-mapper",
+            "saml-user-attribute-mapper",
+            "oidc-address-mapper",
+            "saml-role-list-mapper",
+            "oidc-sha256-pairwise-sub-mapper",
+            "oidc-full-name-mapper",
+            "oidc-usermodel-attribute-mapper",
             "oidc-usermodel-property-mapper"
           ]
         }
@@ -1342,14 +1364,14 @@
         "subComponents": {},
         "config": {
           "allowed-protocol-mapper-types": [
-            "oidc-usermodel-property-mapper",
+            "oidc-usermodel-attribute-mapper",
             "saml-user-property-mapper",
             "oidc-address-mapper",
+            "saml-user-attribute-mapper",
+            "oidc-full-name-mapper",
             "saml-role-list-mapper",
             "oidc-sha256-pairwise-sub-mapper",
-            "saml-user-attribute-mapper",
-            "oidc-usermodel-attribute-mapper",
-            "oidc-full-name-mapper"
+            "oidc-usermodel-property-mapper"
           ]
         }
       }
@@ -1361,7 +1383,7 @@
         "subComponents": {},
         "config": {
           "kc.user.profile.config": [
-            "{\"attributes\":[{\"name\":\"username\",\"displayName\":\"${username}\",\"validations\":{\"length\":{\"min\":3,\"max\":255},\"username-prohibited-characters\":{},\"up-username-not-idn-homograph\":{}},\"permissions\":{\"view\":[\"admin\",\"user\"],\"edit\":[\"admin\",\"user\"]},\"multivalued\":false},{\"name\":\"email\",\"displayName\":\"${email}\",\"validations\":{\"email\":{},\"length\":{\"max\":255}},\"required\":{\"roles\":[\"user\"]},\"permissions\":{\"view\":[\"admin\",\"user\"],\"edit\":[\"admin\",\"user\"]},\"multivalued\":false},{\"name\":\"firstName\",\"displayName\":\"${firstName}\",\"validations\":{\"length\":{\"max\":255},\"person-name-prohibited-characters\":{}},\"required\":{\"roles\":[\"user\"]},\"permissions\":{\"view\":[\"admin\",\"user\"],\"edit\":[\"admin\",\"user\"]},\"multivalued\":false},{\"name\":\"lastName\",\"displayName\":\"${lastName}\",\"validations\":{\"length\":{\"max\":255},\"person-name-prohibited-characters\":{}},\"required\":{\"roles\":[\"user\"]},\"permissions\":{\"view\":[\"admin\",\"user\"],\"edit\":[\"admin\",\"user\"]},\"multivalued\":false}],\"groups\":[{\"name\":\"user-metadata\",\"displayHeader\":\"User metadata\",\"displayDescription\":\"Attributes, which refer to user metadata\"}],\"unmanagedAttributePolicy\":\"ENABLED\"}"
+            "{\"attributes\":[{\"name\":\"username\",\"displayName\":\"${username}\",\"validations\":{\"length\":{\"min\":3,\"max\":255},\"username-prohibited-characters\":{},\"up-username-not-idn-homograph\":{}},\"permissions\":{\"view\":[\"admin\",\"user\"],\"edit\":[\"admin\",\"user\"]},\"multivalued\":false},{\"name\":\"email\",\"displayName\":\"${email}\",\"validations\":{\"email\":{},\"length\":{\"max\":255}},\"required\":{\"roles\":[\"user\"]},\"permissions\":{\"view\":[\"admin\",\"user\"],\"edit\":[\"admin\",\"user\"]},\"multivalued\":false},{\"name\":\"firstName\",\"displayName\":\"${firstName}\",\"validations\":{\"length\":{\"max\":255},\"person-name-prohibited-characters\":{}},\"required\":{\"roles\":[\"user\"]},\"permissions\":{\"view\":[\"admin\",\"user\"],\"edit\":[\"admin\",\"user\"]},\"multivalued\":false},{\"name\":\"lastName\",\"displayName\":\"${lastName}\",\"validations\":{\"length\":{\"max\":255},\"person-name-prohibited-characters\":{}},\"required\":{\"roles\":[\"user\"]},\"permissions\":{\"view\":[\"admin\",\"user\"],\"edit\":[\"admin\",\"user\"]},\"multivalued\":false}],\"groups\":[{\"name\":\"user-metadata\",\"displayHeader\":\"User metadata\",\"displayDescription\":\"Attributes, which refer to user metadata\"}],\"unmanagedAttributePolicy\":\"ADMIN_EDIT\"}"
           ]
         }
       }
@@ -2018,16 +2040,22 @@
   "firstBrokerLoginFlow": "first broker login",
   "attributes": {
     "cibaBackchannelTokenDeliveryMode": "poll",
-    "cibaExpiresIn": "120",
     "cibaAuthRequestedUserHint": "login_hint",
-    "oauth2DeviceCodeLifespan": "600",
+    "clientOfflineSessionMaxLifespan": "0",
     "oauth2DevicePollingInterval": "5",
-    "parRequestUriLifespan": "60",
+    "clientSessionIdleTimeout": "0",
+    "clientOfflineSessionIdleTimeout": "0",
     "cibaInterval": "5",
-    "realmReusableOtpCode": "false"
+    "realmReusableOtpCode": "false",
+    "cibaExpiresIn": "120",
+    "oauth2DeviceCodeLifespan": "600",
+    "parRequestUriLifespan": "60",
+    "clientSessionMaxLifespan": "0",
+    "frontendUrl": "",
+    "acr.loa.map": "{}"
   },
   "keycloakVersion": "24.0.5",
-  "userManagedAccessAllowed": false,
+  "userManagedAccessAllowed": true,
   "clientProfiles": {
     "profiles": []
   },

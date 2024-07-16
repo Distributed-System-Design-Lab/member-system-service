@@ -18,3 +18,18 @@ keycloak:
     cacheTemplates: false
     cacheThemes: false
     custom: custom-theme
+  # 驗證信寄出源頭
+  email:
+    from: your-email@gmail.com
+    # 这是 Gmail 的 SMTP 服务器地址，使用 smtp.gmail.com
+    host: smtp.gmail.com
+    # 这是 Gmail 的 SMTP 服务器端口，使用 587（STARTTLS）
+    port: 587
+    user: your-email@gmail.com
+    password: your-email-password
+    # 启用 SMTP 身份验证
+    auth: true
+    # 启用 STARTTLS（以安全方式发送邮件）
+    starttls: true
+    # 不使用 SSL，因为我们使用的是 STARTTLS
+    ssl: false
